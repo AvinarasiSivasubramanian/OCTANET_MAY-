@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Sans', Arial, sans-serif;
+            box-sizing: border-box;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        #main {
+            width: 100%;
+            min-height: 100vh;
+        }
+        .top {
+            width: 100%;
+            min-height: 60vh;
+            background-image: url('https://pixabay.com/illustrations/tamil-god-murugan-malaysia-temple-8618462/');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .top .overlay {
+            width: 100%;
+            min-height: 60vh;
+            background-color: rgba(0, 0, 0, 0.3);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .text {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            padding: 0 10vh;
+            color: white;
+            bottom: 5%;
+        }
+        .text h1 {
+            font-weight: 600;
+            font-size: 4vw;
+        }
+        .image {
+            background-image: url('https://pixabay.com/illustrations/tamil-god-murugan-malaysia-temple-8618462/');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            width: 220px;
+        }
+        .rtext {
+            display: flex;
+            width: 25%;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .rtext p {
+            font-size: 12px;
+        }
+        .icons {
+            display: flex;
+            justify-content: space-between;
+            width: 10%;
+        }
+        .icons i {
+            font-size: 1.5em;
+        }
+        .bottom {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            min-height: 40vh;
+        }
+        .b1, .b2, .b3 {
+            width: 30%;
+            min-height: 40vh;
+            background-image: url('https://pixabay.com/illustrations/tamil-god-murugan-malaysia-temple-8618462/');
+            background-size: cover;
+            background-position: center;
+        }
+        .b1 h1 {
+            text-align: center;
+            padding: 30px;
+        }
+        .b1 p {
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        .b2 {
+            display: flex;
+            flex-direction: column;
+        }
+        .b2 .up {
+            width: 100%;
+            min-height: 20vh;
+            background-image: url('https://pixabay.com/illustrations/tamil-god-murugan-malaysia-temple-8618462/');
+            background-size: cover;
+            background-position: center;
+        }
+        .b2 .up h1 {
+            text-align: center;
+            padding: 30px;
+        }
+        .b2 .up p {
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        .b2 .down {
+            width: 100%;
+            min-height: 20vh;
+            background-size: cover;
+            background-position: center;
+        }
+        .b2 .down .overlay {
+            position: relative;
+            width: 100%;
+            min-height: 20vh;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .b3 .overlay {
+            position: relative;
+            height: 100%;
+            padding: 4vw 3vh;
+        }
+        .b3 .overlay p {
+            padding: 1.2vh;
+        }
+        @media (max-width: 700px) {
+            .rtext {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        @media (max-width: 500px) {
+            .text {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .text h1 {
+                font-size: 5vh;
+            }
+            .image {
+                height: 200px;
+                width: 140px;
+                margin: 20px;
+            }
+            .rtext {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .rtext p {
+                margin-top: 10px;
+            }
+            .icons {
+                margin-top: 10px;
+            }
+            .bottom {
+                flex-direction: column;
+            }
+            .b1 {
+                width: 100%;
+                min-height: 30vh;
+            }
+            .b2 {
+                width: 100%;
+            }
+            .b2 .up {
+                min-height: 30vh;
+            }
+            .b3 {
+                width: 100%;
+                min-height: 30vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="top">
+            <div class="overlay">
+                <div class="text">
+                    <h1>Images</h1>
+                    <div class="image"></div>
+                    <div class="rtext">
+                        <p>Mesmerizing</p>
+                        <p>Astonishing</p>
+                    </div>
+                    <div class="icons">
+                        <i class="ri-twitter-x-line"></i>
+                        <i class="ri-instagram-line"></i>
+                        <i class="ri-facebook-circle-fill"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="b1">
+                <h1>Popular</h1>
+                <p>asasddfv drfd</p>
+            </div>
+            <div class="b2">
+                <div class="up">
+                    <h1>Latest</h1>
+                    <p>sagdrfd dstgdhhgd</p>
+                </div>
+                <div class="down">
+                    <div class="overlay">
+                        <h1>More...</h1>
+                    </div>                      
+                </div>
+            </div>
+            <div class="b3">
+                <div class="overlay">
+                    <p>Privacy Policy</p>
+                    <p>Terms and Conditions</p>
+                    <p>Contact Us</p>
+                    <p>About Me</p>
+                </div>
+            </div>
+        </div>          
+    </div>
+</body>
+</html>
