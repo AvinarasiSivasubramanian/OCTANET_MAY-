@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To-Do List</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  background-color: #d462aa;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.add-task-container {
+  padding: 20px;
+  display: flex;
+}
+
+.add-task-input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #af4c9d;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  font-size: 16px;
+}
+
+.add-task-button {
+  padding: 10px 20px;
+  background-color: #af4c9d;
+  color: white;
+  border: none;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.task-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task-item {
+  background-color: #f9f9f9;
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.task-item .task-details {
+  flex: 1;
+}
+
+.task-item .task-due-date {
+  color: #666;
+}
+
+.task-item .delete-task-button {
+  background-color: #051dfa;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.task-item .delete-task-button:hover {
+  background-color: #d32f2f;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <h2>To-Do List</h2>
+  </div>
+  <div class="add-task-container">
+    <input type="text" id="myInput" class="add-task-input" placeholder="Add a new task...">
+    <button onclick="newElement()" class="add-task-button">Add</button>
+  </div>
+  <ul id="myUL" class="task-list">
+    <li class="task-item">
+      <div class="task-details">
+        Hit the gym
+      </div>
+      <div class="task-due-date">
+        Due: May 15, 2024
+      </div>
+      <button class="delete-task-button">Delete</button>
+    </li>
+    <li class="task-item">
+      <div class="task-details">
+        Pay bills
+      </div>
+      <div class="task-due-date">
+        Due: May 20, 2024
+      </div>
+      <button class="delete-task-button">Delete</button>
+    </li>
+  </ul>
+</div>
+
+<script>
+function newElement() {
+  var inputValue = document.getElementById("myInput").value;
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    var li = document.createElement("li");
+    li.className = "task-item";
+    
+    var taskDetails = document.createElement("div");
+    taskDetails.className = "task-details";
+    taskDetails.textContent = inputValue;
+    
+    var dueDate = document.createElement("div");
+    dueDate.className = "task-due-date";
+    var currentDate = new Date();
+    var dueDateString = "Due: " + currentDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    dueDate.textContent = dueDateString;
+    
+    var deleteButton = document.createElement("button");
+    deleteButton.className = "delete-task-button";
+    deleteButton.textContent = "Delete";
+    deleteButton.addEventListener("click", function() {
+      var li = this.parentElement;
+      li.parentNode.removeChild(li);
+    });
+    
+    li.appendChild(taskDetails);
+    li.appendChild(dueDate);
+    li.appendChild(deleteButton);
+    
+    document.getElementById("myUL").appendChild(li);
+    document.getElementById("myInput").value = "";
+  }
+}
+</script>
+
+</body>
+</html>
